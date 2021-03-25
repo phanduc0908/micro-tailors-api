@@ -3,7 +3,7 @@ import { Express } from 'express';
 import * as cors from 'cors';
 import { urlencoded, json } from 'body-parser';
 
-import database from '../databases/dbConnection';
+import initRoutes from '../routers';
 
 const app: Express = express();
 
@@ -13,13 +13,15 @@ app.use(json());
 
 app.use(cors({
   origin: true
-}))
+}));
 
-app.get('/test', async (req, res) => {
-  const data = await database.collection('users').doc('8YyWgRgd2uMgZj6PTniM').get();
-  res.json({
-    data: data.data()
-  })
-})
+initRoutes(app);
+
+// app.get('/test', async (req, res) => {
+//   const data = await database.collection('users').doc('8YyWgRgd2uMgZj6PTniM').get();
+//   res.json({
+//     data: data.data()
+//   })
+// })
 
 export default app;

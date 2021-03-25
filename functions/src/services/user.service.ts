@@ -1,5 +1,10 @@
-import { IUserService } from "./interfaces/user.interface";
+import userRepo from '../repositories/user.repository';
 
-export class UserService implements IUserService {
-  constructor() {}
+const getUserById = async (userId: string | number) => {
+  let data = await userRepo.getUserById(1);
+  return data;
+}
+
+export default {
+  getUserById
 }

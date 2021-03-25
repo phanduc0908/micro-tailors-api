@@ -1,15 +1,10 @@
-import { UserModel } from "../models/user.model";
-import { IUserRepository } from "./interfaces/user.interface";
+import database from '../databases/dbConnection';
 
-export class UserRepository implements IUserRepository{
+const getUserById = async (userId: string | number) => {
+  const result = await database.collection('users').doc('8YyWgRgd2uMgZj6PTniM').get();
+  return result.data();
+}
 
-  constructor() {}
-
-  async getUserById(userId: string | number): Promise<UserModel> {
-    return {
-      username: 's',
-      age: 11,
-      email:'sssss'
-    };
-  }
+export default {
+  getUserById
 }
