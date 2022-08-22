@@ -5,9 +5,10 @@
     "noUnusedLocals": true,
     "outDir": "build",
     "sourceMap": true,
-    "strict": true,
     "target": "es2017",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
   },
   "compileOnSave": true,
   "include": [

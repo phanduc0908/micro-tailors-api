@@ -1,6 +1,7 @@
 import * as express from 'express';
 import { Express } from 'express';
 import * as cors from 'cors';
+import 'reflect-metadata';
 import { urlencoded, json } from 'body-parser';
 
 import initRoutes from '../routers';
